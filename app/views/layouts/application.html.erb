@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Man United App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,8 +13,13 @@
   <div class='container'>
    <%= yield %> 
   </div>
-
-  <%= render 'layouts/foot' %> 
+  
+  <% if current_user %>
+  <%= render 'layouts/foot2' %>
+  <% else %>
+  <%= render 'layouts/foot' %>
+  <% end %>
+  
 
 </body>
 </html>
